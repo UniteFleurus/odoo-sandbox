@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<odoo>
+
+<template id="index" name="Jobs">
+    <t t-call="website.layout">
+        <div id="wrap" class="o_website_hr_recruitment_sections_list bg-100">
+            <div class="oe_structure">
+                <section class="pt48 pb32 bg-200">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12 text-center">
+                                <h2 class="h1 text-secondary">Our Job Offers</h2>
+                                <h3 class="text-muted">Join us and help disrupt the enterprise market!</h3>
+                                <p>
+                                    Join us, we offer you an extraordinary chance to learn, to
+                                    develop and to be part of an exciting experience and
+                                    team.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <div class="container oe_website_sections">
+                <div class="row pt48 pb48">
+
+                    <div class="col-lg" id="sections_grid">
+                        <a t-foreach="sections" t-as="section" t-attf-class="text-decoration-none#{' mt-3' if section_index else ''}">
+                            <div class="card card-default mb32">
+                                <div class="card-body">
+                                    <h3 class="text-secondary mt0 mb4">
+                                        <span t-field="section.name"/>
+                                    </h3>
+                                    <h5>
+                                        <t t-esc="section.color"/> open positions
+                                    </h5>
+                                </div>
+                                <p>CACA</p>
+
+                                <div t-if="editable"
+                                    t-field="section.description"
+                                    class="mt16 mb0 css_non_editable_mode_hidden"/>
+                                <div t-esc="section.description or ''"
+                                    class="mt16 mb0 css_editable_mode_hidden o_website_hr_recruitment_section_description"
+                                />
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </t>
+</template>
+
+
+<template  id="test_scout" name="Scout Test" inherit_id="website.layout">
+    <xpath expr="//footer" position="after">
+        <div class="bg-danger">CACACACACACA</div>
+    </xpath>
+</template>
+
+
+</odoo>
